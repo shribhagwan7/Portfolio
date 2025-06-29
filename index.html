@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - SBBS</title>
+    <link rel="icon" type="image/png" href="./images/profle.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        #typewriter {
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: black;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            #typewriter {
+                border-color: white;
+            }
+
+            @keyframes blink {
+
+                0%,
+                100% {
+                    border-color: transparent;
+                }
+
+                50% {
+                    border-color: white;
+                }
+            }
+        }
+    </style>
+
+</head>
+
+<body class="overflow-x-hidden font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
+
+    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[80%] dark:hidden">
+        <img src="./images/header-bg-color.png" alt="" class="w-full">
+    </div>
+
+    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+
+        <!-- <img src="./images/logo.png" alt="logo" class="w-28 cursor-pointer mr-14 dark:hidden">
+        <img src="./images/logo_dark.png" alt="logo" class="w-28 cursor-pointer mr-14 hidden dark:block"> -->
+
+        <!-- <h3 class="text-xl">Shri Bhagwan's Portfolio</h3> -->
+
+        <h3 class="text-xl">Shri Bhagwan's Portfolio</h3>
+
+        <ul
+            class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 shadow-md bg-opacity-50 Poppins dark:border dark:border-white/50 dark:bg-transparent">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#project">My Project</a></li>
+            <li><a href="#contact">Contact me</a></li>
+        </ul>
+
+        <div class="flex items-center gap-4">
+            <button onclick="toggleTheme()">
+                <img src="./images/moon_icon.png" alt="" class="w-6 dark:hidden">
+                <img src="./images/sun_icon.png" alt="" class="w-6 hidden dark:block">
+            </button>
+
+            <a href="#contact"
+                class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 Poppins dark:border-white/50 dark:text-white dark:border-white dark:hover:bg-darkHover">Contact
+                <img src="./images/arrow-icon.png" alt="" class="w-3 dark:hidden">
+                <img src="./images/arrow-icon-dark.png" alt="" class="w-3 hidden dark:block">
+            </a>
+
+            <button class="block md:hidden ml-3" onclick="openMenu()">
+                <img src="./images/menu-black.png" alt="" class="w-6 dark:hidden">
+                <img src="./images/menu-white.png" alt="" class="w-6 hidden dark:block">
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+
+        <ul id="sideMenu"
+            class="flex md:hidden gap-4 flex-col py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 Poppins dark:bg-darkHover dark:text-white">
+
+            <div class="absolute right-6 top-6" onclick="closeMenu()">
+                <img src="./images/close-black.png" alt="" class="w-5 cursor-pointer dark:hidden">
+                <img src="./images/close-white.png" alt="" class="w-5 cursor-pointer hidden dark:block">
+            </div>
+
+            <li><a href="#top" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About me</a></li>
+            <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+            <li><a href="#project" onclick="closeMenu()">My Project</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact me</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- Header -->
+
+    <div id="top"
+        class="w-11/12 max-w-3xl pt-28 text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+        <img src="./images/profle.png" alt="" class="rounded-full px-2 py-1 w-32 bg-gray-200 dark:bg-gray-700">
+        <div class="flex gap-2 items-center">
+            <p class="text-xl md:text-2xl Poppins">Hi!</p>
+            <img src="./images/hand-icon.png" alt="hand-icon" class="w-6 h-6">
+        </div>
+        <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-1 Poppins">I'm Shri Bhagwan Kushwaha</h3>
+        <!-- <h1 class="text-3xl sm:text-6xl lg:text-[66px] Poppins">Software Developer</h1> -->
+        <h1 class="text-3xl sm:text-6xl lg:text-[66px] Poppins">
+            <span id="typewriter" class="border-r-2 border-black dark:border-white pr-1"></span>
+        </h1>
+
+        <p class="max-w-2xl mx-auto Poppins">Aspiring Software Developer passionate about technology and
+            problem-solving, aiming to build fast, efficient, and user-centric applications that make a real-world
+            impact.</p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <a href="#contact"
+                class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] text-white flex items-center gap-2 dark:border-transparent">Contact
+                me <img src="./images/right-arrow-white.png" alt="" class="w-4"></a>
+
+            <a href="./ShriBhagwan_resume.pdf" download
+                class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:text-black">My
+                Resume <img src="./images/download-icon.png" alt="" class="w-4"></a>
+        </div>
+    </div>
+
+    <!-- About me -->
+
+    <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg Poppins underline">Introduction</h4>
+        <h2 class="text-center text-5xl">About me</h2>
+
+        <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+            <div class="max-w-max mx-auto relative">
+                <img src="./images/profle.png" alt=""
+                    class="w-64 sm:w-80 rounded-3xl px-2 py-1 max-w-none bg-gray-200 dark:bg-gray-700">
+
+                <div
+                    class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
+                    <img src="./images/circular-text.png" alt="" class="w-full animate-spin_slow">
+                    <img src="./images/dev-icon.png" alt=""
+                        class="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                </div>
+            </div>
+
+            <div class="flex-1">
+                <p class="mb-10 max-w-2xl Poppins">A self-motivated, hard-working, and ambitious Full-Stack Web
+                    Developer and a good learner with proficiency
+                    in JavaScript, ReactJS, NodeJS. Having a Problem-solving mindset, and 1200+ hrs of hands-on
+                    experience in
+                    developing fully functional E-commerce applications. Looking forward to working as a developer and
+                    competent
+                    employee in an exciting tech company.</p>
+
+                <h4 class="my-6 text-gray-700 Poppins dark:text-white">Tools I Used</h4>
+
+                <ul class="flex items-center gap-3 sm:gap-5">
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/vscode.png" alt="" class="w-5 sm:w-7">
+                    </li>
+
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/firebase.png" alt="" class="w-5 sm:w-7">
+                    </li>
+
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/mongodb.png" alt="" class="w-5 sm:w-7">
+                    </li>
+
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/figma.png" alt="" class="w-5 sm:w-7">
+                    </li>
+
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/git.png" alt="" class="w-5 sm:w-7">
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills -->
+
+    <div id="skills" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg underline">What I've Learned</h4>
+        <h2 class="text-center text-5xl">My Skills</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12">A self-motivated and hard-working individual with a strong
+            learning attitude. Passionate about building meaningful solutions, committed to continuous improvement, and
+            known for taking ownership, staying focused, and delivering results through consistent effort and a
+            problem-solving mindset.</p>
+
+        <div class="grid grid-cols-auto gap-6 my-10">
+
+            <div
+                class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white">
+                <img src="./images/edu-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+                <img src="./images/edu-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+                <h3 class="text-lg my-4 text-gray-700 dark:text-white font-bold">Education</h3>
+                <p class="text-md text-gray-600 leading-5 dark:text-white/80"><span
+                        class="font-bold">10</span><sup>th</sup> (2021) with 90% in BSEB Board. <br><br> <span
+                        class="font-bold">12</span><sup>th</sup> (2023) with 75% in BSEB Board. <br><br> Ongoing <span
+                        class="font-bold">BCA</span> Final Year in Shobhit University Meerut.
+                </p>
+            </div>
+
+            <div
+                class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white">
+                <img src="./images/code-icon.png" alt="" class="w-10">
+                <h3 class="text-lg my-4 text-gray-700 dark:text-white font-bold">Frontend</h3>
+                <p class="text-md text-gray-600 leading-5 dark:text-white/80">
+                    <li class="text-gray-600 dark:text-white/80">HTML</li>
+                    <li class="text-gray-600 dark:text-white/80">Tailwind CSS</li>
+                    <li class="text-gray-600 dark:text-white/80">JavaScript</li>
+                    <li class="text-gray-600 dark:text-white/80">React</li>
+                    <li class="text-gray-600 dark:text-white/80">Redux</li>
+                </p>
+            </div>
+
+            <div
+                class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white">
+                <img src="./images/code-icon.png" alt="" class="w-10">
+                <h3 class="text-lg my-4 text-gray-700 dark:text-white font-bold">Backend</h3>
+                <p class="text-md text-gray-600 leading-5 dark:text-white/80">
+                    <li class="text-gray-600 dark:text-white/80">Node JS</li>
+                    <li class="text-gray-600 dark:text-white/80">Express CSS</li>
+                    <li class="text-gray-600 dark:text-white/80">MongoDB</li>
+                    <li class="text-gray-600 dark:text-white/80">MySQL</li>
+                </p>
+            </div>
+
+            <div
+                class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white">
+                <img src="./images/code-icon.png" alt="" class="w-10">
+                <h3 class="text-lg my-4 text-gray-700 dark:text-white font-bold">Algorithm</h3>
+                <p class="text-md text-gray-600 leading-5 dark:text-white/80">
+                    <li class="text-gray-600 dark:text-white/80">C</li>
+                    <li class="text-gray-600 dark:text-white/80">C++</li>
+                    <li class="text-gray-600 dark:text-white/80">DSA in C++</li>
+                    <li class="text-gray-600 dark:text-white/80">LeetCode 120+</li>
+                    <li class="text-gray-600 dark:text-white/80">HackerRank, GFG</li>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- My project -->
+
+    <div id="project" class="w-full px-[12%] py-10 scroll-mt-20 dark:text-white">
+        <h4 class="text-center mb-2 text-lg Poppins underline">My Projects</h4>
+        <h2 class="text-center text-5xl Poppins">My latest work</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 Poppins">Welcome to my web development portfolio! Discover a
+            curated collection of projects that highlight my skills, creativity, and expertise in building responsive
+            and dynamic web applications.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 my-10">
+
+            <a target="_blank" href="https://greencart-henna.vercel.app/">
+                <div
+                    class="aspect-square bg-[url('./images/green.png')] bg-no-repeat bg-cover bg-center rounded-lg border border-black relative cursor-pointer group">
+
+                    <div
+                        class="bg-gray-200 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+
+                        <div>
+                            <h2 class="font-semibold dark:text-black">MERN Project</h2>
+                            <p class="text-sm text-gray-700">Green Cart - Food Delivery</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition hover:bg-lightHover duration-500">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a href="">
+                <div
+                    class="aspect-square bg-[url('./images/first.png')] bg-no-repeat object-fit bg-cover border border-black bg-center rounded-lg relative cursor-pointer group">
+
+                    <div
+                        class="bg-gray-200 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+
+                        <div>
+                            <h2 class="font-semibold dark:text-black">MERN project</h2>
+                            <p class="text-sm text-gray-700">bookDoctor</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <div
+                class="aspect-square bg-[url('./images/second.png')] bg-no-repeat bg-cover bg-center rounded-lg border border-black relative cursor-pointer group">
+
+                <div
+                    class="bg-gray-200 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+
+                    <div>
+                        <h2 class="font-semibold dark:text-black">Full Stack project</h2>
+                        <p class="text-sm text-gray-700">bookStore</p>
+                    </div>
+                    <div
+                        class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                        <img src="./images/send-icon.png" alt="" class="w-5">
+                    </div>
+
+                </div>
+            </div>
+
+            <a target="_blank" href="https://sbbsdsavisualization.netlify.app/">
+                <div
+                    class="aspect-square bg-[url('./images/third.png')] bg-no-repeat bg-cover bg-center rounded-lg border border-black relative cursor-pointer group">
+
+                    <div
+                        class="bg-gray-200 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+
+                        <div>
+                            <h2 class="font-semibold dark:text-black">Frontend Algorithm</h2>
+                            <p class="text-sm text-gray-700">DSA Visualization</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a target="_blank" href="https://swiggy-clone-ivory-two.vercel.app/">
+                <div
+                    class="aspect-square bg-[url('./images/fourth.png')] bg-no-repeat bg-cover bg-center rounded-lg border border-black relative cursor-pointer group">
+
+                    <div
+                        class="bg-gray-200 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+
+                        <div>
+                            <h2 class="font-semibold dark:text-black">Frontend</h2>
+                            <p class="text-sm text-gray-700">Swiggy Clone</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition hover:bg-lightHover duration-500">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a target="_blank" href="https://sbbsytclone.netlify.app/">
+                <div
+                    class="aspect-square bg-[url('./images/fifth.png')] bg-no-repeat bg-cover bg-center rounded-lg border border-black relative cursor-pointer group">
+
+                    <div
+                        class="bg-gray-200 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+
+                        <div>
+                            <h2 class="font-semibold dark:text-black">Frontend</h2>
+                            <p class="text-sm text-gray-700">YouTube Clone</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition hover:bg-lightHover duration-500">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a target="_blank" href="https://sbbscountdowntimer.netlify.app/">
+                <div
+                    class="aspect-square bg-[url('./images/sixth.png')] bg-no-repeat bg-cover bg-center rounded-lg border border-black relative cursor-pointer group">
+
+                    <div
+                        class="bg-gray-200 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+
+                        <div>
+                            <h2 class="font-semibold dark:text-black">Frontend</h2>
+                            <p class="text-sm text-gray-700">CountDown Timer</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition hover:bg-lightHover duration-500">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a target="_blank" href="https://sbbsmusicplayer.netlify.app/">
+                <div
+                    class="aspect-square bg-[url('./images/seventh.png')] bg-no-repeat bg-cover bg-center rounded-lg border border-black relative cursor-pointer group">
+
+                    <div
+                        class="bg-gray-200 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+
+                        <div>
+                            <h2 class="font-semibold dark:text-black">Frontend</h2>
+                            <p class="text-sm text-gray-700">Music Player</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition hover:bg-lightHover duration-500">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            <a target="_blank" href="https://sbbscalculator.netlify.app/">
+                <div
+                    class="aspect-square bg-[url('./images/eighth.png')] bg-no-repeat bg-cover bg-center rounded-lg border border-black relative cursor-pointer group">
+
+                    <div
+                        class="bg-gray-200 w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+
+                        <div>
+                            <h2 class="font-semibold dark:text-black">Frontend</h2>
+                            <p class="text-sm text-gray-700">Calculator</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition hover:bg-lightHover duration-500">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- <a href="#"
+            class="w-max flex items-center justify-center gap-2 border-[0.5px] text-gray-700 border-gray-700 py-3 px-10 my-20 rounded-full mx-auto hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover">Show
+            more
+            <img src="./images/right-arrow-bold.png" class="w-4 block dark:hidden" alt="">
+            <img src="./images/right-arrow-bold-dark.png" class="w-4 hidden dark:block" alt="">
+        </a> -->
+
+    </div>
+
+    <!-- Contact -->
+
+    <div id="contact"
+        class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center  dark:bg-none">
+        <h4 class="text-center mb-2 text-lg Poppins underline">Contact with me</h4>
+        <h2 class="text-center text-5xl Poppins">Get in touch</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 Poppins">I'd love to hear from you! If you have any
+            questions, comments or feedback, please use the form below.
+        </p>
+
+        <form method="POST" action="https://api.web3forms.com/submit" class="max-w-2xl mx-auto">
+
+            <input type="hidden" name="access_key" value="098668d0-f71b-4b9c-89f2-ef6f98256198">
+
+            <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
+                <input type="text" placeholder="Enter your name"
+                    class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
+                    required name="name">
+
+                <input type="email" placeholder="Enter your email"
+                    class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
+                    required name="email">
+            </div>
+            <textarea rows="6" placeholder="Enter your messages"
+                class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white/90"
+                required name="message"></textarea>
+            <button
+                class="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover">Submit
+                now <img src="./images/right-arrow-white.png" class="w-4" alt=""></button>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="mt-20">
+        <div class="text-center">
+            <div class="w-max flex items-center gap-2 mx-auto">
+                <img src="./images/mail_icon.png" class="w-6 dark:hidden" alt="">
+                <img src="./images/mail_icon_dark.png" class="w-6 hidden dark:block" alt="">
+                official.shribhagwan7@gmail.com
+            </div>
+        </div>
+
+        <div class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
+            <p>&copy; 2025 SBBS. All rights reserved.</p>
+            <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+                <li><a target="_blank" href="https://github.com/shribhagwan7/">GitHub</a></li>
+                <li><a target="_blank" href="www.linkedin.com/in/shribhagwankr">LinkedIn</a></li>
+                <li><a target="_blank" href="https://instagram.com/sbbs_kushwaha/">Instagram</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
